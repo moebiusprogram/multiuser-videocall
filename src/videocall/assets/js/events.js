@@ -64,16 +64,7 @@ window.addEventListener( 'load', () => {
             sessionStorage.setItem( 'username', yourName );
 
             //create room link
-
-            console.log("location.origin",location.origin)
-
-            let roomLink = ""
-            if( "http://localhost:3000" === location.origin ) {
-                roomLink = `${ location.origin }/?room=${ roomName.trim().replace( ' ', '_' ) }_${ helpers.generateRandomString() }`;
-            } else {
-                roomLink = `${ location.origin }/interfaz/?room=${ roomName.trim().replace( ' ', '_' ) }_${ helpers.generateRandomString() }`;
-            }
-
+            let roomLink = `${ location.origin }/interfaz/?room=${ roomName.trim().replace( ' ', '_' ) }_${ helpers.generateRandomString() }`;
 
             //show message with link to room
             document.querySelector( '#room-created' ).innerHTML = `Room successfully created. Click <a href='${ roomLink }'>here</a> to enter room. 
